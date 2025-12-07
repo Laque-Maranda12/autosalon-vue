@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" fill="none">
+  <rect width="520" height="260" rx="18" fill="#f9fafc" />
+  <path d="M64 184c28-48 92-82 200-88 82-4 186 10 230 46 26 22 28 52-4 70-20 10-46 14-76 14H134c-92 0-142-24-70-42z" fill="#e4e8f0" />
+  <rect x="80" y="110" width="360" height="118" rx="32" fill="#f5f5f7" stroke="#dfe2ea" stroke-width="3" />
+  <path d="M110 206c18-60 88-90 186-92 74-2 156 24 178 92H110z" fill="#ffffff" />
+  <path d="M160 186c14-32 56-46 126-48 74-2 140 14 156 48H160z" fill="#eceff4" />
+  <rect x="158" y="146" width="82" height="24" rx="11" fill="#1a1b21" />
+  <rect x="256" y="146" width="82" height="24" rx="11" fill="#1a1b21" />
+  <rect x="356" y="150" width="52" height="20" rx="10" fill="#cfd4de" />
+  <circle cx="156" cy="214" r="28" fill="#0f1015" />
+  <circle cx="156" cy="214" r="18" fill="#eef1f6" />
+  <circle cx="366" cy="214" r="28" fill="#0f1015" />
+  <circle cx="366" cy="214" r="18" fill="#eef1f6" />
+  <text x="120" y="78" font-family="'Inter', sans-serif" font-size="20" font-weight="700" fill="#1c1c1e">Jaguar F-Type</text>
+  <text x="120" y="102" font-family="'Inter', sans-serif" font-size="14" fill="#7a7a80">Купе для детальных просмотров в каталоге</text>
+</svg>

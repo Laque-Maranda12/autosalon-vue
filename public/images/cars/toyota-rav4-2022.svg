@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="280" viewBox="0 0 420 280" fill="none">
+  <rect width="420" height="280" rx="18" fill="#f8f9fc" />
+  <path d="M46 192c22-42 60-78 140-90 52-8 152-10 204 18 28 16 46 40 44 64-2 26-22 46-58 46H90c-54 0-70-32-44-38z" fill="#e6e8ef" />
+  <rect x="70" y="120" width="280" height="110" rx="28" fill="#ffffff" stroke="#dfe2ea" stroke-width="3" />
+  <path d="M96 208c14-46 54-76 120-80 70-4 144 18 164 80H96z" fill="#f7f8fb" />
+  <path d="M140 194c10-36 42-54 98-56 62-2 120 18 130 56H140z" fill="#ffffff" />
+  <rect x="138" y="152" width="68" height="22" rx="10" fill="#111217" />
+  <rect x="222" y="152" width="62" height="22" rx="10" fill="#111217" />
+  <rect x="296" y="154" width="40" height="18" rx="9" fill="#dfe3ea" />
+  <circle cx="134" cy="212" r="26" fill="#0f1015" />
+  <circle cx="134" cy="212" r="16" fill="#eef1f6" />
+  <circle cx="302" cy="212" r="26" fill="#0f1015" />
+  <circle cx="302" cy="212" r="16" fill="#eef1f6" />
+  <text x="96" y="70" font-family="'Inter', sans-serif" font-size="20" font-weight="700" fill="#1c1c1e">Toyota RAV4 2022</text>
+  <text x="96" y="94" font-family="'Inter', sans-serif" font-size="14" fill="#7a7a80">Динамичный кроссовер из примеров макета</text>
+</svg>
