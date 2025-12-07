@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f8fb" />
+      <stop offset="80%" stop-color="#dde2eb" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" rx="28" fill="url(#g)" />
+  <path d="M150 520c36-64 84-88 150-108l160-48c52-16 120-24 176-22 84 2 188 12 266 32 46 12 94 38 126 76 20 24 28 48 26 70-6 54-56 90-118 90H276c-108 0-170-60-126-90z" fill="#202229" opacity="0.1" />
+  <rect x="210" y="340" width="780" height="220" rx="54" fill="#fefefe" stroke="#d8dbe3" stroke-width="4" />
+  <path d="M260 480c18-58 60-118 148-132 46-8 110-10 156-10 132 0 236 10 310 42 58 26 92 64 102 110H260z" fill="#f3f4f7" />
+  <path d="M302 470c12-52 48-88 104-102 70-18 198-18 290-8 92 12 140 44 158 110H302z" fill="#ffffff" />
+  <rect x="360" y="414" width="180" height="46" rx="12" fill="#13141a" />
+  <rect x="580" y="414" width="180" height="46" rx="12" fill="#13141a" />
+  <rect x="812" y="418" width="110" height="40" rx="12" fill="#dce0e8" />
+  <circle cx="370" cy="520" r="44" fill="#0f1015" />
+  <circle cx="370" cy="520" r="28" fill="#eef1f6" />
+  <circle cx="850" cy="520" r="44" fill="#0f1015" />
+  <circle cx="850" cy="520" r="28" fill="#eef1f6" />
+  <rect x="410" y="370" width="140" height="28" rx="12" fill="#d9dce2" />
+  <rect x="572" y="370" width="220" height="28" rx="12" fill="#d9dce2" />
+  <text x="340" y="608" font-family="'Inter', sans-serif" font-size="26" font-weight="700" fill="#1c1c1e">Audi RS — атмосферный герой раздела</text>
+</svg>
