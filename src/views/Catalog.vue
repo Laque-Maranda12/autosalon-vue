@@ -244,6 +244,10 @@ export default {
     const goToCar = (id) => {
       router.push(`/car/${id}`)
     }
+
+    const handleImageError = (event) => {
+      event.target.src = 'https://via.placeholder.com/600x400/ecf0f1/2c3e50?text=Автомобиль'
+    }
     
     const applyFilters = () => {
       // Фильтры применяются автоматически через computed
