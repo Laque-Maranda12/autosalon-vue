@@ -6,7 +6,18 @@ const CURRENT_USER_KEY = 'avtomir_current_user'
 // Получить всех пользователей
 export const getUsers = () => {
   const users = localStorage.getItem(STORAGE_KEY)
-  return users ? JSON.parse(users) : []
+
+  if (!users) {
+    return []
+  }
+
+  try {
+    return JSON.parse(users)
+  } catch (error) {
+    console.error('Не удалось прочитать список пользователей, сбрасываем кэш', error)
+    localStorage.removeItem(STORAGE_KEY)
+    return []
+  }
 }
 
 // Сохранить пользователей
@@ -63,7 +74,18 @@ export const logoutUser = () => {
 // Получить текущего пользователя
 export const getCurrentUser = () => {
   const user = localStorage.getItem(CURRENT_USER_KEY)
-  return user ? JSON.parse(user) : null
+
+  if (!user) {
+    return null
+  }
+
+  try {
+    return JSON.parse(user)
+  } catch (error) {
+    console.error('Не удалось прочитать данные пользователя, выполняем выход', error)
+    logoutUser()
+    return null
+  }
 }
 
 // Проверка авторизации
