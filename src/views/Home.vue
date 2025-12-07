@@ -24,17 +24,23 @@
           <div class="service-card">
             <h3>С пробегом</h3>
             <p>Предлагаем купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">🚗</div>
+            <div class="service-icon">
+              <img src="/images/icons/service-used.svg" alt="Иконка для авто с пробегом" />
+            </div>
           </div>
           <div class="service-card">
             <h3>Новые</h3>
             <p>Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">✨</div>
+            <div class="service-icon">
+              <img src="/images/icons/service-new.svg" alt="Иконка для новых авто" />
+            </div>
           </div>
           <div class="service-card">
             <h3>Под ваш бюджет</h3>
             <p>Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">💰</div>
+            <div class="service-icon">
+              <img src="/images/icons/service-budget.svg" alt="Иконка подбор авто под бюджет" />
+            </div>
           </div>
         </div>
       </div>
@@ -404,8 +410,16 @@ export default {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  font-size: 4rem;
-  opacity: 0.1;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0.15;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .cars-section {
