@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#ecf0f1" rx="16"/>
+  <path d="M80 240 L500 240 Q540 240 560 260 L580 280 Q590 300 580 320 L120 320 Q80 320 60 300 L40 260 Q20 240 40 240 Z" fill="#bdc3c7"/>
+  <circle cx="180" cy="320" r="35" fill="#7f8c8d"/>
+  <circle cx="430" cy="320" r="35" fill="#7f8c8d"/>
+  <text x="50%" y="50%" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#2c3e50">
+    Добавьте реальное фото автомобиля
+  </text>
+</svg>
