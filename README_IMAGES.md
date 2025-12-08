@@ -13,6 +13,7 @@ public/
     cars/          ← Сюда поместите фото автомобилей
     hero/          ← Главное изображение для главной страницы
     about/         ← Фото команды для страницы "О нас"
+    logo/          ← Логотипы для шапки/футера или брендовые знаки
 ```
 
 ## Как добавить изображения
@@ -21,6 +22,7 @@ public/
    - `public/images/cars/`
    - `public/images/hero/`
    - `public/images/about/`
+   - `public/images/logo/`
 
 2. **Поместите изображения** с правильными именами:
    - `toyota-rav4-2022.jpg` - для Toyota RAV4
@@ -28,6 +30,8 @@ public/
    - `honda-cr-v-2021.jpg` - для Honda CR-V
    - `hero-car.jpg` - для главной страницы
    - `team.jpg` - для страницы "О нас"
+   - `site-logo.png` - основной логотип (header/footer)
+   - `site-logo-invert.png` - альтернативная версия на тёмном фоне (опционально)
 
 3. **Перезапустите сервер**: `npm run dev`
 
