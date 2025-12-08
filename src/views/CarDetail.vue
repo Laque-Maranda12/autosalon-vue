@@ -8,7 +8,7 @@
           <div class="car-images">
             <div class="main-image">
               <img
-                :src="currentImage || car.image"
+                :src="getImageSrc(currentImage || car.image)"
                 :alt="car.name"
                 @error="handleImageError"
               />
@@ -21,7 +21,7 @@
                 @click="currentImage = img"
               >
                 <img
-                  :src="img"
+                  :src="getImageSrc(img)"
                   :alt="`${car.name} ${index + 1}`"
                   @error="handleImageError"
                 />
@@ -96,8 +96,14 @@ export default {
     const route = useRoute()
     const car = ref(null)
     const currentImage = ref('')
-    const placeholder =
-      'https://via.placeholder.com/600x400/ecf0f1/2c3e50?text=Автомобиль'
+    const placeholder = '/images/cars/placeholder.svg'
+    const galleryImages = [
+      '/images/cars/toyota-rav4-2022.jpg',
+      '/images/cars/audi-q5-2021.jpg',
+      '/images/cars/honda-cr-v-2021.jpg'
+    ]
+
+    const getPrimaryImage = (carId) => galleryImages[(carId - 1) % galleryImages.length]
 
     // Один объект на машину, images = массив из одной картинки
     const carsData = {
@@ -111,11 +117,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.5 л',
-        image:
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(1),
+        images: galleryImages,
         fullDescription:
           'Toyota Camry 2023 года — современный седан, сочетающий комфорт, надежность и экономичность. Автомобиль оснащен передовыми технологиями безопасности и комфорта.',
         features: [
@@ -130,55 +133,31 @@ export default {
       },
       2: {
         id: 2,
-        name: 'Audi Q5 2021',
+        name: 'BMW X5 2022',
         price: 4500000,
-        year: 2021,
+        year: 2022,
         mileage: 25000,
         fuel: 'Бензин',
         transmission: 'Автомат',
         drive: 'Полный',
-        engine: '2.0 л',
-        image: '/images/cars/audi-q5-2021.jpg',
-        images: ['/images/cars/audi-q5-2021.jpg'],
+        engine: '3.0 л',
+        image: getPrimaryImage(2),
+        images: galleryImages,
         fullDescription:
-          'Audi Q5 2021 — премиальный кроссовер с богатым оснащением и комфортной подвеской для города и трассы.',
+          'BMW X5 2022 — премиальный кроссовер с мощным двигателем, просторным салоном и богатым оснащением для города и трассы.',
         features: [
           'Кожаный салон премиум',
-          'Панорамная крыша',
-          'Полный привод Quattro',
-          'Премиальная акустика',
+          'Пневмоподвеска',
           'Ассистент парковки',
-          'Светодиодные фары',
-          'Подогрев сидений',
+          'Камеры кругового обзора',
+          'Премиальная акустика',
+          'Подогрев и вентиляция сидений',
+          'Память настроек сидений',
           'Apple CarPlay / Android Auto'
         ]
       },
       3: {
         id: 3,
-        name: 'Honda CR-V 2021',
-        price: 3200000,
-        year: 2021,
-        mileage: 12000,
-        fuel: 'Бензин',
-        transmission: 'Вариатор',
-        drive: 'Полный',
-        engine: '2.0 л',
-        image: '/images/cars/honda-cr-v-2021.jpg',
-        images: ['/images/cars/honda-cr-v-2021.jpg'],
-        fullDescription:
-          'Honda CR-V 2021 — универсальный семейный кроссовер с просторным салоном и надежным полным приводом.',
-        features: [
-          'Кожаный салон',
-          'Камера заднего вида',
-          'Система удержания полосы',
-          'Климат-контроль',
-          'Круиз-контроль',
-          'Подогрев сидений',
-          'Система контроля слепых зон'
-        ]
-      },
-      4: {
-        id: 4,
         name: 'Mercedes-Benz C-Class 2023',
         price: 3200000,
         year: 2023,
@@ -187,11 +166,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Задний',
         engine: '2.0 л',
-        image:
-          'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(3),
+        images: galleryImages,
         fullDescription:
           'Mercedes-Benz C-Class 2023 — элегантный седан премиум-класса с современным дизайном и передовыми технологиями.',
         features: [
@@ -204,6 +180,30 @@ export default {
           'Премиальная акустика'
         ]
       },
+      4: {
+        id: 4,
+        name: 'Audi A4 2022',
+        price: 2800000,
+        year: 2022,
+        mileage: 20000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Передний',
+        engine: '2.0 л',
+        image: getPrimaryImage(4),
+        images: galleryImages,
+        fullDescription:
+          'Audi A4 2022 — спортивный седан с современными технологиями и динамичной управляемостью.',
+        features: [
+          'Кожаный салон',
+          'Матрикс-фары',
+          'Ассистент парковки',
+          'Камера заднего вида',
+          'Подогрев сидений',
+          'Круиз-контроль',
+          'Мультимедиа MMI'
+        ]
+      },
       5: {
         id: 5,
         name: 'Volkswagen Passat 2021',
@@ -214,11 +214,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.0 л',
-        image:
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(5),
+        images: galleryImages,
         fullDescription:
           'Volkswagen Passat 2021 — надежный семейный автомобиль с просторным салоном и экономичным дизельным двигателем.',
         features: [
@@ -240,8 +237,8 @@ export default {
         transmission: 'Вариатор',
         drive: 'Полный',
         engine: '2.5 л',
-        image: '/images/cars/toyota-rav4-2022.jpg',
-        images: ['/images/cars/toyota-rav4-2022.jpg'],
+        image: getPrimaryImage(6),
+        images: galleryImages,
         fullDescription:
           'Toyota RAV4 2023 — экономичный кроссовер с гибридной установкой, обеспечивающей отличную экономию топлива и экологичность.',
         features: [
@@ -263,11 +260,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Полный',
         engine: '3.5 л',
-        image:
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(7),
+        images: galleryImages,
         fullDescription:
           'Lexus RX 2022 — роскошный кроссовер с высоким уровнем комфорта и надежности.',
         features: [
@@ -289,11 +283,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.0 л',
-        image:
-          'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(8),
+        images: galleryImages,
         fullDescription:
           'Hyundai Tucson 2023 — современный кроссовер с богатой комплектацией и свежим дизайном.',
         features: [
@@ -315,11 +306,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.0 л',
-        image:
-          'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(9),
+        images: galleryImages,
         fullDescription:
           'Kia Sportage 2022 — стильный кроссовер с отличной управляемостью и богатым оснащением.',
         features: [
@@ -341,11 +329,8 @@ export default {
         transmission: 'Вариатор',
         drive: 'Передний',
         engine: '2.0 л',
-        image:
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(10),
+        images: galleryImages,
         fullDescription:
           'Nissan Qashqai 2023 — популярный городской кроссовер с экономичным двигателем и современными ассистентами.',
         features: [
@@ -367,11 +352,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Полный',
         engine: '2.5 л',
-        image:
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(11),
+        images: galleryImages,
         fullDescription:
           'Mazda CX-5 2022 — динамичный кроссовер с отличной управляемостью и стильным дизайном.',
         features: [
@@ -393,11 +375,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Полный',
         engine: '3.0 л',
-        image:
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop'
-        ],
+        image: getPrimaryImage(12),
+        images: galleryImages,
         fullDescription:
           'Ford Explorer 2021 — просторный внедорожник для всей семьи с мощным двигателем и высоким уровнем безопасности.',
         features: [
@@ -415,6 +394,8 @@ export default {
       return new Intl.NumberFormat('ru-RU').format(price)
     }
 
+    const getImageSrc = (image) => image || placeholder
+
     const handleImageError = (event) => {
       event.target.src = placeholder
     }
@@ -423,7 +404,7 @@ export default {
       const carId = parseInt(route.params.id)
       car.value = carsData[carId] || null
       if (car.value) {
-        currentImage.value = car.value.image
+        currentImage.value = car.value.image || placeholder
       }
     })
 
@@ -431,6 +412,7 @@ export default {
       car,
       currentImage,
       formatPrice,
+      getImageSrc,
       handleImageError
     }
   }

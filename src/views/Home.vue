@@ -179,7 +179,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import FAQ from '@/components/FAQ.vue'
 
@@ -191,47 +191,44 @@ export default {
   setup() {
     const router = useRouter()
     const currentSlide = ref(0)
-    
+    const placeholder = '/images/cars/placeholder.svg'
+    const galleryImages = [
+      '/images/cars/toyota-rav4-2022.jpg',
+      '/images/cars/audi-q5-2021.jpg',
+      '/images/cars/honda-cr-v-2021.jpg'
+    ]
+
+    const baseCars = [
+      { name: 'Toyota RAV4 2022', marketPrice: 3300000, price: 2700000 },
+      { name: 'Audi Q5 2021', marketPrice: 3250000, price: 2500000 },
+      { name: 'Honda CR-V 2021', marketPrice: 2900000, price: 2300000 }
+    ]
+
     const contactForm = ref({
       phone: '',
       agree: false
     })
-    
-    const cars = ref([
-      {
-        id: 1,
-        name: 'Toyota RAV4 2022',
+
+    const cars = ref(
+      baseCars.map((car, index) => ({
+        id: index + 1,
+        name: car.name,
         mileage: 5700,
         engine: '2.0',
         power: 149,
         transmission: 'Автомат',
-        marketPrice: 3300000,
-        price: 2700000,
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
-      },
-      {
-        id: 2,
-        name: 'Audi Q5 2021',
-        mileage: 5700,
-        engine: '2.0',
-        power: 149,
-        transmission: 'Автомат',
-        marketPrice: 3250000,
-        price: 2500000,
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
-      },
-      {
-        id: 3,
-        name: 'Honda CR-V 2021',
-        mileage: 5700,
-        engine: '2.0',
-        power: 149,
-        transmission: 'Автомат',
-        marketPrice: 2900000,
-        price: 2300000,
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop&auto=format'
-      }
-    ])
+        marketPrice: car.marketPrice,
+        price: car.price,
+        image: galleryImages[index] || placeholder
+      }))
+    )
+
+    onMounted(() => {
+      galleryImages.forEach(src => {
+        const img = new Image()
+        img.src = src
+      })
+    })
     
     const guarantees = ref([
       { id: 1, icon: 'SAFE', text: '100% возврат предоплаты' },
@@ -294,7 +291,7 @@ export default {
     }
     
     const handleImageError = (event) => {
-      event.target.src = 'https://via.placeholder.com/600x400/ecf0f1/2c3e50?text=Автомобиль'
+      event.target.src = placeholder
     }
     
     return {

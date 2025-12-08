@@ -3,7 +3,7 @@
     <section class="section">
       <div class="container">
         <h1 class="section-title">Каталог автомобилей</h1>
-        
+
         <div class="filters">
           <div class="filter-group">
             <label>Марка:</label>
@@ -16,34 +16,34 @@
               <option value="Volkswagen">Volkswagen</option>
             </select>
           </div>
-          
+
           <div class="filter-group">
             <label>Цена от:</label>
             <input type="number" v-model.number="filters.minPrice" @input="applyFilters" placeholder="0" />
           </div>
-          
+
           <div class="filter-group">
             <label>Цена до:</label>
             <input type="number" v-model.number="filters.maxPrice" @input="applyFilters" placeholder="10000000" />
           </div>
-          
+
           <div class="filter-group">
             <label>Год от:</label>
             <input type="number" v-model.number="filters.minYear" @input="applyFilters" placeholder="2015" />
           </div>
-          
+
           <button class="btn btn-outline" @click="resetFilters">Сбросить</button>
         </div>
-        
+
         <div class="cars-grid">
-          <div 
-            v-for="car in filteredCars" 
-            :key="car.id" 
+          <div
+            v-for="car in filteredCars"
+            :key="car.id"
             class="car-card card"
             @click="goToCar(car.id)"
           >
             <div class="car-image">
-              <img :src="car.image" :alt="car.name" @error="handleImageError($event)" />
+              <img :src="getCarImage(car.image)" :alt="car.name" @error="handleImageError($event)" />
             </div>
             <div class="car-info">
               <h3>{{ car.name }}</h3>
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-        
+
         <div v-if="filteredCars.length === 0" class="no-results">
           <p>Автомобили не найдены. Попробуйте изменить фильтры.</p>
         </div>
@@ -76,14 +76,22 @@ export default {
   name: 'Catalog',
   setup() {
     const router = useRouter()
-    
+    const placeholder = '/images/cars/placeholder.svg'
+    const galleryImages = [
+      '/images/cars/toyota-rav4-2022.jpg',
+      '/images/cars/audi-q5-2021.jpg',
+      '/images/cars/honda-cr-v-2021.jpg'
+    ]
+
+    const getPrimaryImage = (carId) => galleryImages[(carId - 1) % galleryImages.length]
+
     const filters = ref({
       brand: '',
       minPrice: null,
       maxPrice: null,
       minYear: null
     })
-    
+
     const cars = ref([
       {
         id: 1,
@@ -94,7 +102,7 @@ export default {
         mileage: 15000,
         fuel: 'Бензин',
         description: 'Комфортный седан с отличной экономичностью',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: getPrimaryImage(1)
       },
       {
         id: 2,
@@ -105,7 +113,7 @@ export default {
         mileage: 25000,
         fuel: 'Бензин',
         description: 'Премиальный кроссовер с мощным двигателем',
-        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop'
+        image: getPrimaryImage(2)
       },
       {
         id: 3,
@@ -116,7 +124,7 @@ export default {
         mileage: 10000,
         fuel: 'Бензин',
         description: 'Элегантный седан премиум-класса',
-        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop'
+        image: getPrimaryImage(3)
       },
       {
         id: 4,
@@ -127,7 +135,7 @@ export default {
         mileage: 20000,
         fuel: 'Бензин',
         description: 'Спортивный седан с современными технологиями',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: getPrimaryImage(4)
       },
       {
         id: 5,
@@ -138,7 +146,7 @@ export default {
         mileage: 35000,
         fuel: 'Дизель',
         description: 'Надежный семейный автомобиль',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
+        image: getPrimaryImage(5)
       },
       {
         id: 6,
@@ -149,7 +157,7 @@ export default {
         mileage: 8000,
         fuel: 'Гибрид',
         description: 'Экономичный кроссовер с гибридной установкой',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: getPrimaryImage(6)
       },
       {
         id: 7,
@@ -160,7 +168,7 @@ export default {
         mileage: 18000,
         fuel: 'Бензин',
         description: 'Роскошный кроссовер с премиальной отделкой',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: getPrimaryImage(7)
       },
       {
         id: 8,
@@ -171,7 +179,7 @@ export default {
         mileage: 12000,
         fuel: 'Бензин',
         description: 'Современный кроссовер с богатой комплектацией',
-        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop'
+        image: getPrimaryImage(8)
       },
       {
         id: 9,
@@ -182,7 +190,7 @@ export default {
         mileage: 22000,
         fuel: 'Бензин',
         description: 'Стильный кроссовер с отличной проходимостью',
-        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop'
+        image: getPrimaryImage(9)
       },
       {
         id: 10,
@@ -193,7 +201,7 @@ export default {
         mileage: 9000,
         fuel: 'Бензин',
         description: 'Популярный кроссовер с надежным двигателем',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: getPrimaryImage(10)
       },
       {
         id: 11,
@@ -204,7 +212,7 @@ export default {
         mileage: 16000,
         fuel: 'Бензин',
         description: 'Динамичный кроссовер с отличной управляемостью',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
+        image: getPrimaryImage(11)
       },
       {
         id: 12,
@@ -215,10 +223,10 @@ export default {
         mileage: 28000,
         fuel: 'Бензин',
         description: 'Просторный внедорожник для всей семьи',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: getPrimaryImage(12)
       }
     ])
-    
+
     const filteredCars = computed(() => {
       return cars.value.filter(car => {
         if (filters.value.brand && car.brand !== filters.value.brand) {
@@ -236,19 +244,19 @@ export default {
         return true
       })
     })
-    
+
     const formatPrice = (price) => {
       return new Intl.NumberFormat('ru-RU').format(price)
     }
-    
+
     const goToCar = (id) => {
       router.push(`/car/${id}`)
     }
-    
+
     const applyFilters = () => {
       // Фильтры применяются автоматически через computed
     }
-    
+
     const resetFilters = () => {
       filters.value = {
         brand: '',
@@ -257,7 +265,13 @@ export default {
         minYear: null
       }
     }
-    
+
+    const getCarImage = (image) => image || placeholder
+
+    const handleImageError = (event) => {
+      event.target.src = placeholder
+    }
+
     return {
       filters,
       cars,
@@ -266,7 +280,8 @@ export default {
       goToCar,
       applyFilters,
       resetFilters,
-      handleImageError
+      handleImageError,
+      getCarImage
     }
   }
 }
@@ -371,10 +386,9 @@ export default {
   .filters {
     flex-direction: column;
   }
-  
+
   .cars-grid {
     grid-template-columns: 1fr;
   }
 }
 </style>
-
