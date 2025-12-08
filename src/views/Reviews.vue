@@ -8,7 +8,13 @@
             <div class="review-header">
               <div class="review-author">{{ review.author }}</div>
               <div class="review-rating">
-                <span v-for="i in 5" :key="i" :class="{ filled: i <= review.rating }">★</span>
+                <span
+                  v-for="i in 5"
+                  :key="i"
+                  class="rating-symbol"
+                  :class="{ filled: i <= review.rating }"
+                  aria-hidden="true"
+                >*</span>
               </div>
             </div>
             <p class="review-text">{{ review.text }}</p>
@@ -105,8 +111,14 @@ export default {
 }
 
 .review-rating {
-  color: #ddd;
+  color: #d0d0d0;
   font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.rating-symbol {
+  display: inline-block;
+  font-weight: 700;
 }
 
 .review-rating .filled {

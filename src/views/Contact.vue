@@ -24,12 +24,12 @@
               <div class="field-label">Время работы:</div>
               <div class="field-value">Ежедневно 10:00 до 19:00</div>
             </div>
-            <div class="contact-field">
+              <div class="contact-field">
               <div class="field-label">Соц. сети:</div>
               <div class="social-icons-contact">
-                <a href="#" class="social-icon-circle">✈️</a>
+                <a href="#" class="social-icon-circle">TG</a>
                 <a href="#" class="social-icon-circle">VK</a>
-                <a href="#" class="social-icon-circle">▶️</a>
+                <a href="#" class="social-icon-circle">YT</a>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
         <div class="map-section">
           <div class="map-container">
             <div class="map-placeholder">
-              <p>📍 Карта Яндекс</p>
+              <p>Карта Яндекс</p>
               <p>Марпосадское шоссе, 14, Чебоксары</p>
               <div class="map-controls">
                 <a href="#" class="map-link">Как добраться</a>

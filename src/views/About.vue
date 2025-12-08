@@ -14,15 +14,15 @@
             </p>
             <div class="features-list">
               <div class="feature-item">
-                <div class="feature-icon">🚗</div>
+                <div class="feature-icon">AUTO</div>
                 <span>Работаем без посредников</span>
               </div>
               <div class="feature-item">
-                <div class="feature-icon">⭐</div>
+                <div class="feature-icon">10+</div>
                 <span>Успешный опыт 10 лет</span>
               </div>
               <div class="feature-item">
-                <div class="feature-icon">🚚</div>
+                <div class="feature-icon">LOG</div>
                 <span>Отлаженная логистика</span>
               </div>
             </div>
