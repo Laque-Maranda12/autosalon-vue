@@ -21,20 +21,10 @@
     <section class="section services-section">
       <div class="container">
         <div class="services-grid">
-          <div class="service-card">
-            <h3>С пробегом</h3>
-            <p>Предлагаем купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">🚗</div>
-          </div>
-          <div class="service-card">
-            <h3>Новые</h3>
-            <p>Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">✨</div>
-          </div>
-          <div class="service-card">
-            <h3>Под ваш бюджет</h3>
-            <p>Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру</p>
-            <div class="service-icon">💰</div>
+          <div class="service-card" v-for="service in services" :key="service.id">
+            <div class="service-icon" v-html="service.icon"></div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
           </div>
         </div>
       </div>
@@ -111,7 +101,7 @@
         <h2 class="section-title">Наши гарантии</h2>
         <div class="guarantees-grid">
           <div class="guarantee-card" v-for="guarantee in guarantees" :key="guarantee.id">
-            <div class="guarantee-icon">{{ guarantee.icon }}</div>
+            <div class="guarantee-icon" v-html="guarantee.icon"></div>
             <p>{{ guarantee.text }}</p>
           </div>
         </div>
@@ -167,7 +157,7 @@
             <h3>Точный расчет стоимости уже через 1 час</h3>
             <ul class="benefits-list">
               <li v-for="benefit in benefits" :key="benefit">
-                <span class="check-icon">✓</span>
+                <span class="check-icon" v-html="checkIcon" aria-hidden="true"></span>
                 {{ benefit }}
               </li>
             </ul>
@@ -196,6 +186,49 @@ export default {
       phone: '',
       agree: false
     })
+
+    const serviceIcons = {
+      used: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="18" width="36" height="12" rx="2.5" stroke="currentColor" stroke-width="2" />
+              <path d="M12 30v4.5M36 30v4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              <path d="M14 18l2-5h16l2 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <circle cx="16" cy="34.5" r="3" fill="currentColor" />
+              <circle cx="32" cy="34.5" r="3" fill="currentColor" />
+              <path d="M21 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>`,
+      new: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6l3 9h9l-7.5 5.5L31.5 30 24 24.5 16.5 30l2-9.5L11 15h9l4-9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              <path d="M15 34l-2 5m20-5l2 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>`,
+      budget: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="14" width="32" height="20" rx="3" stroke="currentColor" stroke-width="2" />
+                <path d="M14 18h20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <rect x="26" y="22" width="12" height="8" rx="2" fill="currentColor" opacity="0.12" />
+                <path d="M28 26a2 2 0 1 1 4 0a2 2 0 0 1-4 0z" fill="currentColor" />
+                <path d="M12 26h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>`
+    }
+
+    const services = ref([
+      {
+        id: 'used',
+        title: 'С пробегом',
+        description: 'Предлагаем купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру',
+        icon: serviceIcons.used
+      },
+      {
+        id: 'new',
+        title: 'Новые',
+        description: 'Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру',
+        icon: serviceIcons.new
+      },
+      {
+        id: 'budget',
+        title: 'Под ваш бюджет',
+        description: 'Предлагаем Вам купить автомобиль дешевле до 60%, от рыночной цены на Авито и Авто.ру',
+        icon: serviceIcons.budget
+      }
+    ])
     
     const cars = ref([
       {
@@ -233,14 +266,55 @@ export default {
       }
     ])
     
+    const guaranteeIcons = {
+      refund: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <rect x="10" y="8" width="28" height="32" rx="3" stroke="currentColor" stroke-width="2" />
+                 <path d="M16 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 <path d="M16 24h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 <path d="M16 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 <path d="M20 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 <path d="M24 34l-3 3m3-3l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+               </svg>`,
+      contract: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <rect x="12" y="8" width="24" height="32" rx="3" stroke="currentColor" stroke-width="2" />
+                   <path d="M17 16h14M17 22h10M17 28h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                   <path d="M24 34l4 4l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                 </svg>`,
+      magnifier: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <circle cx="22" cy="22" r="10" stroke="currentColor" stroke-width="2" />
+                   <path d="M30 30l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                   <path d="M18 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 </svg>`,
+      building: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2" />
+                   <path d="M12 20h24" stroke="currentColor" stroke-width="2" />
+                   <path d="M18 14h4m4 0h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                   <path d="M18 26h4m4 0h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                   <path d="M18 32h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                 </svg>`,
+      quality: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 7l4.5 4.5H35v6L39 22l-4 4v6h-6.5L24 37l-4.5-4.5H13v-6L9 22l4-4v-6h6.5L24 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                  <path d="M19 24l3 3l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>`,
+      insurance: `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 6l14 6v10c0 7.2-5.7 13.5-14 16c-8.3-2.5-14-8.8-14-16V12l14-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                    <path d="M18 24l4 4l8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>`
+    }
+
     const guarantees = ref([
-      { id: 1, icon: '💼', text: '100% возврат предоплаты' },
-      { id: 2, icon: '📄', text: 'Работаем по договору' },
-      { id: 3, icon: '🔍', text: 'Договор без мелкого шрифта' },
-      { id: 4, icon: '🏢', text: 'Оплата в кассу нашего автосалона или на р/с компании' },
-      { id: 5, icon: '✨', text: 'Качество автомобиля' },
-      { id: 6, icon: '🛡️', text: 'На всех этапах сделки - автомобили застрахованы' }
+      { id: 1, icon: guaranteeIcons.refund, text: '100% возврат предоплаты' },
+      { id: 2, icon: guaranteeIcons.contract, text: 'Работаем по договору' },
+      { id: 3, icon: guaranteeIcons.magnifier, text: 'Договор без мелкого шрифта' },
+      { id: 4, icon: guaranteeIcons.building, text: 'Оплата в кассу нашего автосалона или на р/с компании' },
+      { id: 5, icon: guaranteeIcons.quality, text: 'Качество автомобиля' },
+      { id: 6, icon: guaranteeIcons.insurance, text: 'На всех этапах сделки - автомобили застрахованы' }
     ])
+
+    const checkIcon = `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2" />
+                        <path d="M6 10.5l2.5 2.5L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>`
     
     const advantages = ref([
       {
@@ -299,10 +373,12 @@ export default {
     
     return {
       currentSlide,
+      services,
       cars,
       guarantees,
       advantages,
       benefits,
+      checkIcon,
       contactForm,
       formatPrice,
       formatNumber,
@@ -404,8 +480,13 @@ export default {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  font-size: 4rem;
-  opacity: 0.1;
+  opacity: 0.12;
+  color: var(--red-color);
+}
+
+.service-icon svg {
+  width: 72px;
+  height: 72px;
 }
 
 .cars-section {
@@ -593,8 +674,13 @@ export default {
 }
 
 .guarantee-icon {
-  font-size: 2.5rem;
+  color: var(--red-color);
   flex-shrink: 0;
+}
+
+.guarantee-icon svg {
+  width: 44px;
+  height: 44px;
 }
 
 .guarantee-card p {
@@ -744,13 +830,10 @@ export default {
 .check-icon {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background: var(--red-color);
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  color: var(--red-color);
   flex-shrink: 0;
 }
 
