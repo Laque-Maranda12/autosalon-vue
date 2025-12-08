@@ -4,7 +4,7 @@
       <div class="container">
         <div class="about-content">
           <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Наша команда" />
+            <img src="/images/about/team.svg" alt="Наша команда" />
           </div>
           <div class="about-text">
             <h1 class="page-title">О нас</h1>

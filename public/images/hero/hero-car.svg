@@ -1,0 +1,20 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'>
+  <defs>
+    <linearGradient id='h' x1='0%' y1='0%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#0f4c75' stop-opacity='0.9'/>
+      <stop offset='100%' stop-color='#1b262c' stop-opacity='0.9'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='700' fill='url(#h)' rx='40'/>
+  <circle cx='950' cy='180' r='120' fill='#bbe1fa' opacity='0.15'/>
+  <rect x='120' y='320' width='980' height='140' fill='#bbe1fa' opacity='0.1' rx='20'/>
+  <text x='50%' y='25%' text-anchor='middle' font-family='Arial, sans-serif' font-size='42' fill='#bbe1fa'>Каталог автомобилей</text>
+  <text x='50%' y='38%' text-anchor='middle' font-family='Arial, sans-serif' font-size='28' fill='#e4f1fb'>Локальные изображения для предпросмотра</text>
+  <g transform='translate(180,340)'>
+    <path d='M80 120 L780 120 Q860 120 920 160 L980 200 Q995 220 980 240 L120 240 Q80 240 60 220 L20 180 Q0 160 30 140 L80 120 Z' fill='#bbe1fa' opacity='0.9'/>
+    <circle cx='200' cy='240' r='60' fill='#1b262c'/>
+    <circle cx='200' cy='240' r='34' fill='#bbe1fa'/>
+    <circle cx='700' cy='240' r='60' fill='#1b262c'/>
+    <circle cx='700' cy='240' r='34' fill='#bbe1fa'/>
+  </g>
+</svg>

@@ -12,7 +12,7 @@
           <router-link to="/catalog" class="btn btn-hero">Каталог</router-link>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop" alt="Автомобиль" />
+          <img src="/images/hero/hero-car.svg" alt="Автомобиль" />
         </div>
       </div>
     </section>
@@ -207,7 +207,7 @@ export default {
         transmission: 'Автомат',
         marketPrice: 3300000,
         price: 2700000,
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: '/images/cars/toyota-rav4-2023.svg'
       },
       {
         id: 2,
@@ -218,7 +218,7 @@ export default {
         transmission: 'Автомат',
         marketPrice: 3250000,
         price: 2500000,
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: '/images/cars/audi-q5-2021.svg'
       },
       {
         id: 3,
@@ -229,7 +229,7 @@ export default {
         transmission: 'Автомат',
         marketPrice: 2900000,
         price: 2300000,
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop&auto=format'
+        image: '/images/cars/honda-crv-2021.svg'
       }
     ])
     

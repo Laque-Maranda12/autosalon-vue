@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'>
+  <rect width='1200' height='700' fill='#f4f6f9' rx='40'/>
+  <circle cx='220' cy='250' r='90' fill='#3498db' opacity='0.8'/>
+  <circle cx='600' cy='250' r='90' fill='#e67e22' opacity='0.8'/>
+  <circle cx='980' cy='250' r='90' fill='#9b59b6' opacity='0.8'/>
+  <circle cx='220' cy='250' r='55' fill='#ecf0f1'/>
+  <circle cx='600' cy='250' r='55' fill='#ecf0f1'/>
+  <circle cx='980' cy='250' r='55' fill='#ecf0f1'/>
+  <text x='50%' y='55%' text-anchor='middle' font-family='Arial, sans-serif' font-size='40' fill='#2c3e50'>Наша команда</text>
+  <text x='50%' y='63%' text-anchor='middle' font-family='Arial, sans-serif' font-size='26' fill='#2c3e50'>Замените эти изображения на реальные фото при первой возможности</text>
+</svg>

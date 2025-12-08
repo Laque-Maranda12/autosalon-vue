@@ -107,12 +107,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.5 л',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/toyota-camry-2023.svg',
+        images: ['/images/cars/toyota-camry-2023.svg', '/images/cars/mercedes-c-class-2023.svg', '/images/cars/audi-a4-2022.svg'],
         fullDescription: 'Toyota Camry 2023 года - это современный седан, сочетающий в себе комфорт, надежность и экономичность. Автомобиль оснащен передовыми технологиями безопасности и комфорта.',
         features: [
           'Кожаный салон',
@@ -133,12 +129,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Полный',
         engine: '3.0 л',
-        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/bmw-x5-2022.svg',
+        images: ['/images/cars/bmw-x5-2022.svg', '/images/cars/lexus-rx-2022.svg', '/images/cars/ford-explorer-2021.svg'],
         fullDescription: 'BMW X5 2022 - премиальный кроссовер с мощным двигателем и роскошным интерьером. Идеальный выбор для тех, кто ценит комфорт и динамику.',
         features: [
           'Кожаный салон премиум',
@@ -159,12 +151,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Задний',
         engine: '2.0 л',
-        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/mercedes-c-class-2023.svg',
+        images: ['/images/cars/mercedes-c-class-2023.svg', '/images/cars/audi-a4-2022.svg', '/images/cars/toyota-camry-2023.svg'],
         fullDescription: 'Mercedes-Benz C-Class 2023 - элегантный седан премиум-класса с современным дизайном и передовыми технологиями.',
         features: [
           'Кожаный салон',
@@ -185,12 +173,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Полный',
         engine: '2.0 л',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/audi-a4-2022.svg',
+        images: ['/images/cars/audi-a4-2022.svg', '/images/cars/vw-passat-2021.svg', '/images/cars/mercedes-c-class-2023.svg'],
         fullDescription: 'Audi A4 2022 - спортивный седан с современными технологиями и отличной динамикой.',
         features: [
           'Кожаный салон',
@@ -211,12 +195,8 @@ export default {
         transmission: 'Автомат',
         drive: 'Передний',
         engine: '2.0 л',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/vw-passat-2021.svg',
+        images: ['/images/cars/vw-passat-2021.svg', '/images/cars/audi-a4-2022.svg', '/images/cars/toyota-camry-2023.svg'],
         fullDescription: 'Volkswagen Passat 2021 - надежный семейный автомобиль с просторным салоном и экономичным дизельным двигателем.',
         features: [
           'Тканевый салон',
@@ -237,12 +217,8 @@ export default {
         transmission: 'Вариатор',
         drive: 'Полный',
         engine: '2.5 л',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&h=800&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop',
-          'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
-        ],
+        image: '/images/cars/toyota-rav4-2023.svg',
+        images: ['/images/cars/toyota-rav4-2023.svg', '/images/cars/lexus-rx-2022.svg', '/images/cars/bmw-x5-2022.svg'],
         fullDescription: 'Toyota RAV4 2023 - экономичный кроссовер с гибридной установкой, обеспечивающей отличную экономию топлива и экологичность.',
         features: [
           'Кожаный салон',
@@ -251,6 +227,138 @@ export default {
           'Адаптивный круиз-контроль',
           'Подогрев и вентиляция сидений',
           'Apple CarPlay / Android Auto'
+        ]
+      },
+      7: {
+        id: 7,
+        name: 'Lexus RX 2022',
+        price: 4200000,
+        year: 2022,
+        mileage: 18000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Полный',
+        engine: '3.5 л',
+        image: '/images/cars/lexus-rx-2022.svg',
+        images: ['/images/cars/lexus-rx-2022.svg', '/images/cars/toyota-rav4-2023.svg', '/images/cars/toyota-camry-2023.svg'],
+        fullDescription: 'Lexus RX 2022 - роскошный кроссовер с премиальной отделкой и высоким уровнем комфорта.',
+        features: [
+          'Салон из перфорированной кожи',
+          'Премиальная акустика Mark Levinson',
+          'Системы удержания в полосе и предотвращения столкновений',
+          'Обогрев рулевого колеса и сидений',
+          'Память настроек водительского сиденья',
+          'Полный привод E-Four'
+        ]
+      },
+      8: {
+        id: 8,
+        name: 'Hyundai Tucson 2023',
+        price: 2200000,
+        year: 2023,
+        mileage: 12000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Полный',
+        engine: '2.0 л',
+        image: '/images/cars/hyundai-tucson-2023.svg',
+        images: ['/images/cars/hyundai-tucson-2023.svg', '/images/cars/kia-sportage-2022.svg', '/images/cars/nissan-qashqai-2023.svg'],
+        fullDescription: 'Hyundai Tucson 2023 - современный кроссовер с богатой комплектацией и ярким дизайном.',
+        features: [
+          'Полный пакет систем SmartSense',
+          'Обогрев всех сидений и руля',
+          'Двухзонный климат-контроль',
+          'Система выбора режима движения',
+          'Светодиодная оптика',
+          'Мультимедиа с поддержкой CarPlay'
+        ]
+      },
+      9: {
+        id: 9,
+        name: 'Kia Sportage 2022',
+        price: 2100000,
+        year: 2022,
+        mileage: 22000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Полный',
+        engine: '2.4 л',
+        image: '/images/cars/kia-sportage-2022.svg',
+        images: ['/images/cars/kia-sportage-2022.svg', '/images/cars/hyundai-tucson-2023.svg', '/images/cars/mazda-cx5-2022.svg'],
+        fullDescription: 'Kia Sportage 2022 - стильный кроссовер с отличной проходимостью и просторным салоном.',
+        features: [
+          'Система кругового обзора',
+          'Ассистент спуска с горы',
+          'Обогрев лобового стекла и зеркал',
+          'Проекционный дисплей',
+          'Светодиодные фары',
+          'Управление мультимедиа с руля'
+        ]
+      },
+      10: {
+        id: 10,
+        name: 'Nissan Qashqai 2023',
+        price: 2400000,
+        year: 2023,
+        mileage: 9000,
+        fuel: 'Бензин',
+        transmission: 'Вариатор',
+        drive: 'Передний',
+        engine: '1.3 л',
+        image: '/images/cars/nissan-qashqai-2023.svg',
+        images: ['/images/cars/nissan-qashqai-2023.svg', '/images/cars/hyundai-tucson-2023.svg', '/images/cars/kia-sportage-2022.svg'],
+        fullDescription: 'Nissan Qashqai 2023 - популярный кроссовер с экономичным двигателем и современными системами безопасности.',
+        features: [
+          'Системы ProPILOT и предупреждение фронтальных столкновений',
+          'Круиз-контроль с ограничителем скорости',
+          'Обогрев передних и задних сидений',
+          'Светодиодные фары и ДХО',
+          'Мультимедиа NissanConnect',
+          'Парктроники по кругу'
+        ]
+      },
+      11: {
+        id: 11,
+        name: 'Mazda CX-5 2022',
+        price: 2600000,
+        year: 2022,
+        mileage: 16000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Полный',
+        engine: '2.5 л',
+        image: '/images/cars/mazda-cx5-2022.svg',
+        images: ['/images/cars/mazda-cx5-2022.svg', '/images/cars/kia-sportage-2022.svg', '/images/cars/bmw-x5-2022.svg'],
+        fullDescription: 'Mazda CX-5 2022 - динамичный кроссовер с отличной управляемостью и эффектным дизайном.',
+        features: [
+          'Система G-Vectoring Control',
+          'Кожаный салон Nappa',
+          'Проекционный дисплей',
+          'Адаптивные LED фары',
+          'Память настроек сидений',
+          'Аудиосистема Bose'
+        ]
+      },
+      12: {
+        id: 12,
+        name: 'Ford Explorer 2021',
+        price: 3500000,
+        year: 2021,
+        mileage: 28000,
+        fuel: 'Бензин',
+        transmission: 'Автомат',
+        drive: 'Полный',
+        engine: '3.0 л',
+        image: '/images/cars/ford-explorer-2021.svg',
+        images: ['/images/cars/ford-explorer-2021.svg', '/images/cars/bmw-x5-2022.svg', '/images/cars/lexus-rx-2022.svg'],
+        fullDescription: 'Ford Explorer 2021 - просторный внедорожник для всей семьи с современными системами безопасности.',
+        features: [
+          'Трехзонный климат-контроль',
+          'Система Terrain Management',
+          'Камеры кругового обзора',
+          'Фронтальный и задний парктроник',
+          'Электропривод пятой двери',
+          'Панорамная крыша'
         ]
       }
     }

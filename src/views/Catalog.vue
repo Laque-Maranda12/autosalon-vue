@@ -94,7 +94,7 @@ export default {
         mileage: 15000,
         fuel: 'Бензин',
         description: 'Комфортный седан с отличной экономичностью',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: '/images/cars/toyota-camry-2023.svg'
       },
       {
         id: 2,
@@ -105,7 +105,7 @@ export default {
         mileage: 25000,
         fuel: 'Бензин',
         description: 'Премиальный кроссовер с мощным двигателем',
-        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop'
+        image: '/images/cars/bmw-x5-2022.svg'
       },
       {
         id: 3,
@@ -116,7 +116,7 @@ export default {
         mileage: 10000,
         fuel: 'Бензин',
         description: 'Элегантный седан премиум-класса',
-        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop'
+        image: '/images/cars/mercedes-c-class-2023.svg'
       },
       {
         id: 4,
@@ -127,7 +127,7 @@ export default {
         mileage: 20000,
         fuel: 'Бензин',
         description: 'Спортивный седан с современными технологиями',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: '/images/cars/audi-a4-2022.svg'
       },
       {
         id: 5,
@@ -138,7 +138,7 @@ export default {
         mileage: 35000,
         fuel: 'Дизель',
         description: 'Надежный семейный автомобиль',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
+        image: '/images/cars/vw-passat-2021.svg'
       },
       {
         id: 6,
@@ -149,7 +149,7 @@ export default {
         mileage: 8000,
         fuel: 'Гибрид',
         description: 'Экономичный кроссовер с гибридной установкой',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: '/images/cars/toyota-rav4-2023.svg'
       },
       {
         id: 7,
@@ -160,7 +160,7 @@ export default {
         mileage: 18000,
         fuel: 'Бензин',
         description: 'Роскошный кроссовер с премиальной отделкой',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: '/images/cars/lexus-rx-2022.svg'
       },
       {
         id: 8,
@@ -171,7 +171,7 @@ export default {
         mileage: 12000,
         fuel: 'Бензин',
         description: 'Современный кроссовер с богатой комплектацией',
-        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop'
+        image: '/images/cars/hyundai-tucson-2023.svg'
       },
       {
         id: 9,
@@ -182,7 +182,7 @@ export default {
         mileage: 22000,
         fuel: 'Бензин',
         description: 'Стильный кроссовер с отличной проходимостью',
-        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop'
+        image: '/images/cars/kia-sportage-2022.svg'
       },
       {
         id: 10,
@@ -193,7 +193,7 @@ export default {
         mileage: 9000,
         fuel: 'Бензин',
         description: 'Популярный кроссовер с надежным двигателем',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&h=600&fit=crop'
+        image: '/images/cars/nissan-qashqai-2023.svg'
       },
       {
         id: 11,
@@ -204,7 +204,7 @@ export default {
         mileage: 16000,
         fuel: 'Бензин',
         description: 'Динамичный кроссовер с отличной управляемостью',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop'
+        image: '/images/cars/mazda-cx5-2022.svg'
       },
       {
         id: 12,
@@ -215,7 +215,7 @@ export default {
         mileage: 28000,
         fuel: 'Бензин',
         description: 'Просторный внедорожник для всей семьи',
-        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0ad6?w=800&h=600&fit=crop'
+        image: '/images/cars/ford-explorer-2021.svg'
       }
     ])
     
@@ -257,7 +257,11 @@ export default {
         minYear: null
       }
     }
-    
+
+    const handleImageError = (event) => {
+      event.target.src = '/images/cars/placeholder.svg'
+    }
+
     return {
       filters,
       cars,
