@@ -11,7 +11,7 @@
           <div class="form-group">
             <label for="email">Email</label>
             <div class="input-wrapper">
-              <span class="input-icon">✉️</span>
+              <span class="input-icon">E</span>
               <input 
                 type="email" 
                 id="email" 
@@ -25,7 +25,7 @@
           <div class="form-group">
             <label for="password">Password</label>
             <div class="input-wrapper">
-              <span class="input-icon">🔒</span>
+              <span class="input-icon">P</span>
               <input 
                 type="password" 
                 id="password" 
